@@ -21,6 +21,9 @@ return F[n]
 
 */
 
+// The code I created similarly follows the Change_Making algorithm, with
+//a few adjustments. There was an error in my code when I tried having j = 1,
+// and therefore decided to leave it to j = 0.
 #include <iostream>
 #include <stdio.h>
 #include <climits>
@@ -29,14 +32,18 @@ using namespace std;
 
 int Change_Making(int input[], int m, int change_amount)
 {
+  //this is set to store the number of coins
   int F[change_amount + 1];
+
+  //in the change_amount is 0 base case
   F[0] = 0;
 
   for(int i = 1; i <= change_amount; i ++) {
-    F[i] = INT_MAX;
-    int temp = INT_MAX;
-    int j = 0;
+    F[i] = INT_MAX; //initialized F[] with an infinity value
+    int temp = INT_MAX; // likewise with temp as an infinity value
+    int j = 0;      //set to 0
 
+    //this will check all values(change_amount) smaller than i
     while (j <= m &&  i >= input[j]) {
       temp = min(F[i - input[j]], temp);
       j = j + 1;
@@ -46,6 +53,7 @@ int Change_Making(int input[], int m, int change_amount)
   return F[change_amount];
 }
 
+//Driver code
 int main()
 {
   int input[] = {1,2,3,4};
@@ -57,6 +65,7 @@ int main()
   for(size_t i=0; i < n; i++) {
     cout << input[i] << ' ';
   }
+
   cout << "]";
 
   cout << "\nAmount of: " << change_amount << "\n";
