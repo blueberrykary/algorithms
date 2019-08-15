@@ -60,7 +60,7 @@ int main()
   int m = sizeof(input)/sizeof(input[0]);
   int change_amount = 15;
   size_t n = sizeof(input)/sizeof(input[0]);
-  cout << "Denominations: [ "  ;
+  cout << "Change Denominations: [ "  ;
 
   for(size_t i=0; i < n; i++) {
     cout << input[i] << ' ';
