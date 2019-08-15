@@ -43,7 +43,7 @@ int Change_Making(int input[], int m, int change_amount)
     }
     F[i] = temp + 1;
   }
-return F[change_amount];
+  return F[change_amount];
 }
 
 int main()
@@ -62,5 +62,5 @@ int main()
   cout << "\nAmount of: " << change_amount << "\n";
   cout << "The minimum number of coins required to get desired change:  " << Change_Making(input, m, change_amount) << "\n";
 
-return 0;
+  return 0;
 }
