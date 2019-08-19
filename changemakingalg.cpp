@@ -36,7 +36,7 @@ int Change_Making(int input[], int m, int change_amount)
   int F[change_amount + 1];
 
   //in the change_amount is 0 base case
-  F[0] = 1;
+  F[0] = 0;
 
   for(int i = 1; i <= change_amount; i ++) {
     F[i] = INT_MAX; //initialized F[] with an infinity value
